@@ -18,6 +18,7 @@
 		D34264C71EFB3C8F00DF0894 /* Supply.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34264C61EFB3C8F00DF0894 /* Supply.swift */; };
 		D34264C91EFB3E8900DF0894 /* SupplyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34264C81EFB3E8900DF0894 /* SupplyStore.swift */; };
 		D34264CB1EFB41B800DF0894 /* SupplyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34264CA1EFB41B800DF0894 /* SupplyDetailViewController.swift */; };
+		D3FBD9841EFB810800CD200E /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FBD9831EFB810800CD200E /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		D34264C61EFB3C8F00DF0894 /* Supply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supply.swift; sourceTree = "<group>"; };
 		D34264C81EFB3E8900DF0894 /* SupplyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplyStore.swift; sourceTree = "<group>"; };
 		D34264CA1EFB41B800DF0894 /* SupplyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplyDetailViewController.swift; sourceTree = "<group>"; };
+		D3FBD9831EFB810800CD200E /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 			children = (
 				D34264941EFB1E9D00DF0894 /* AppDelegate.swift */,
 				D34264981EFB1E9D00DF0894 /* Main.storyboard */,
+				D3FBD9831EFB810800CD200E /* ImageStore.swift */,
 				D34264CA1EFB41B800DF0894 /* SupplyDetailViewController.swift */,
 				D34264C41EFB3C6600DF0894 /* SuppliesViewController.swift */,
 				D34264C61EFB3C8F00DF0894 /* Supply.swift */,
@@ -279,6 +282,7 @@
 				D34264951EFB1E9D00DF0894 /* AppDelegate.swift in Sources */,
 				D34264C31EFB1F5E00DF0894 /* TIBHomeWebViewController.swift in Sources */,
 				D34264CB1EFB41B800DF0894 /* SupplyDetailViewController.swift in Sources */,
+				D3FBD9841EFB810800CD200E /* ImageStore.swift in Sources */,
 				D34264C91EFB3E8900DF0894 /* SupplyStore.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

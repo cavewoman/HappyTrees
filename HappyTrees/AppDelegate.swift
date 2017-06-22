@@ -15,8 +15,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Create item store
+        // Create stores
         let supplyStore = SupplyStore()
+        let imageStore = ImageStore()
+
         
         // Access trhe ItemsViewController and set its item store
         let tabController = window!.rootViewController as! UITabBarController
@@ -24,6 +26,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         let suppliesViewController =  navController.topViewController as! SuppliesViewController
         suppliesViewController.supplyStore = supplyStore
+        suppliesViewController.imageStore = imageStore
+
         return true
     }
 

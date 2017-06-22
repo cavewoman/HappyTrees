@@ -46,5 +46,9 @@
 		<key>NSAllowsArbitraryLoadsInWebContent</key>
 		<true/>
 	</dict>
+	<key>NSCameraUsageDescription</key>
+	<string>This application uses your camera to store images of your supplies</string>
+	<key>NSPhotoLibraryUsageDescription</key>
+	<string>This application uses your library to store images for your supplies</string>
 </dict>
 </plist>

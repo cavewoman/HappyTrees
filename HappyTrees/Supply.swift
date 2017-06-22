@@ -12,11 +12,13 @@ class Supply: NSObject {
     var name: String?
     var type: String?
     var amount: Double?
+    let supplyKey: String
     
     init(name: String, type: String, amount: Double) {
         self.name = name
         self.type = type
         self.amount = amount
+        self.supplyKey = UUID().uuidString
         
         super.init()
     }
@@ -29,6 +31,8 @@ class Supply: NSObject {
         name = aDecoder.decodeObject(forKey: "name") as! String?
         type = aDecoder.decodeObject(forKey: "type") as! String?
         amount = aDecoder.decodeObject(forKey: "amount") as! Double?
+        supplyKey = aDecoder.decodeObject(forKey: "supplyKey") as! String
+
         
         super.init()
     }
