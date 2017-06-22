@@ -35,15 +35,16 @@ class SuppliesViewController: UITableViewController {
         let supply = supplyStore.allSupplies[indexPath.row]
         
         cell.textLabel?.text = supply.name
+        cell.detailTextLabel?.text = "\(supply.amount!)"
         switch getAmountType(amount: supply.amount) {
         case .moreThanHalfFull:
-            cell.backgroundColor = UIColor().colorFromHex(hexValue: "e1f7d5")
+            cell.backgroundColor = UIColor().colorFromHex(hexValue: "6a8347")
         case .halfFull:
-            cell.backgroundColor = UIColor().colorFromHex(hexValue: "ffffcc")
+            cell.backgroundColor = UIColor().colorFromHex(hexValue: "71b238")
         case .lessThanHalfFull:
-            cell.backgroundColor = UIColor().colorFromHex(hexValue: "FFE4B5")
+            cell.backgroundColor = UIColor().colorFromHex(hexValue: "a6cb45")
         default:
-            cell.backgroundColor = UIColor().colorFromHex(hexValue: "FA8072")
+            cell.backgroundColor = UIColor().colorFromHex(hexValue: "fefcd7")
             
         }
         
