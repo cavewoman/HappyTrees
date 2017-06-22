@@ -37,13 +37,13 @@ class SuppliesViewController: UITableViewController {
         cell.textLabel?.text = supply.name
         switch getAmountType(amount: supply.amount) {
         case .moreThanHalfFull:
-            cell.backgroundColor = .green
+            cell.backgroundColor = UIColor().colorFromHex(hexValue: "e1f7d5")
         case .halfFull:
-            cell.backgroundColor = .yellow
+            cell.backgroundColor = UIColor().colorFromHex(hexValue: "ffffcc")
         case .lessThanHalfFull:
-            cell.backgroundColor = .orange
+            cell.backgroundColor = UIColor().colorFromHex(hexValue: "FFE4B5")
         default:
-            cell.backgroundColor = .red
+            cell.backgroundColor = UIColor().colorFromHex(hexValue: "FA8072")
             
         }
         
@@ -57,12 +57,14 @@ class SuppliesViewController: UITableViewController {
             let supplyDetailViewController = segue.destination as! SupplyDetailViewController
             supplyDetailViewController.supply = supply
             supplyDetailViewController.imageStore = imageStore
+            supplyDetailViewController.supplyStore = supplyStore
         case "updateSupplyDetails"?:
             if let row = tableView.indexPathForSelectedRow?.row {
                 let supply = supplyStore.allSupplies[row]
                 let supplyDetailViewController = segue.destination as! SupplyDetailViewController
                 supplyDetailViewController.supply = supply
                 supplyDetailViewController.imageStore = imageStore
+                supplyDetailViewController.supplyStore = supplyStore
             }
         default:
             preconditionFailure("Unexpected segues identifier.")
@@ -85,5 +87,39 @@ class SuppliesViewController: UITableViewController {
         } else {
             return .empty
         }
+    }
+}
+
+extension UIColor {
+    func colorFromHex(hexValue: String) -> UIColor {
+        let (redText, greenText, blueText) = parseHexString(hexValue: hexValue)
+        
+        let redFloat = Float(redText)
+        let greenFloat = Float(greenText)
+        let blueFloat = Float(blueText)
+        
+        let red: Float = redFloat! / 0xff
+        let green: Float = greenFloat! / 0xff
+        let blue: Float = blueFloat! / 0xff
+        
+        return UIColor(colorLiteralRed: red, green: green, blue: blue, alpha: 1)
+    }
+    
+    func parseHexString(hexValue: String) -> (String, String, String) {
+        var redText: String = "0x"
+        var greenText: String = "0x"
+        var blueText: String = "0x"
+
+        for (index, char) in hexValue.characters.enumerated() {
+            switch index {
+            case 0, 1:
+                redText += "\(char)"
+            case 2, 3:
+                greenText += "\(char)"
+            default:
+                blueText += "\(char)"
+            }
+        }
+        return (redText, greenText, blueText)
     }
 }

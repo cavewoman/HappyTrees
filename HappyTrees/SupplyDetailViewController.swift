@@ -48,6 +48,8 @@ class SupplyDetailViewController: UIViewController, UITextFieldDelegate, UINavig
         }
     }
     
+    var supplyStore: SupplyStore!
+    
     var imageStore: ImageStore!
     
     let numberFormatter: NumberFormatter = {
@@ -96,10 +98,15 @@ class SupplyDetailViewController: UIViewController, UITextFieldDelegate, UINavig
         super.viewWillDisappear(animated)
         
         view.endEditing(true)
+        if let enteredName = nameField.text, enteredName != "" {
+            supply.name = nameField.text
+            supply.type = typeField.text ?? ""
+            supply.amount = Double(amountField.text!) ?? 0.0
+        } else {
+            supplyStore.removeSupply(supply)
+        }
         
-        supply.name = nameField.text ?? ""
-        supply.type = typeField.text ?? ""
-        supply.amount = Double(amountField.text!) ?? 0.0
+        
     }
 
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
