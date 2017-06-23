@@ -13,6 +13,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
     let supplyStore = SupplyStore()
+    let favoriteStore = FavoriteStore()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Create stores
@@ -21,11 +22,16 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         // Access trhe ItemsViewController and set its item store
         let tabController = window!.rootViewController as! UITabBarController
-        let navController = tabController.viewControllers?[0] as! UINavigationController
         
-        let suppliesViewController =  navController.topViewController as! SuppliesViewController
+        
+        let suppliesNavController = tabController.viewControllers?[0] as! UINavigationController
+        let suppliesViewController =  suppliesNavController.topViewController as! SuppliesViewController
         suppliesViewController.supplyStore = supplyStore
         suppliesViewController.imageStore = imageStore
+        
+        let favoritesNavController = tabController.viewControllers?[2] as! UINavigationController
+        let favoritesViewController = favoritesNavController.topViewController as! FavoritesViewController
+        favoritesViewController.favoriteStore = favoriteStore
 
         return true
     }
@@ -39,11 +45,17 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
         // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
         print("ENTERING BACKGROUND")
-        let success = supplyStore.saveChanges()
-        if (success) {
+        let supplySuccess = supplyStore.saveChanges()
+        if (supplySuccess) {
             print("Saved all of the supplies")
         } else {
             print("Could not save any of the supplies")
+        }
+        let favoriteSuccess = favoriteStore.saveChanges()
+        if (favoriteSuccess) {
+            print("Saved all of the favorites")
+        } else {
+            print("Could not dave any of the favorites")
         }
 
     }
