@@ -37,7 +37,7 @@ class SupplyDetailViewController: UIViewController, UITextFieldDelegate, UINavig
     }
     @IBAction func removePicture(_ sender: UIButton) {
         let key = supply.supplyKey
-        imageStore.deleteImage(forKey: key)
+        imageStore.deleteImage(forKey: key!)
         imageView.image = nil
         removeImageButton.isHidden = true
     }
@@ -78,13 +78,11 @@ class SupplyDetailViewController: UIViewController, UITextFieldDelegate, UINavig
             typeField.text = supplyType
         }
         
-        if let supplyAmount = supply.amount {
-            amountField.text = "\(supplyAmount)"
-        }
+        amountField.text = "\(supply.amount!)"
         
         
         let key = supply.supplyKey
-        let imageToDisplay = imageStore.image(forKey: key)
+        let imageToDisplay = imageStore.image(forKey: key!)
         if (imageToDisplay != nil) {
             removeImageButton.isHidden = false
         } else {
@@ -116,7 +114,7 @@ class SupplyDetailViewController: UIViewController, UITextFieldDelegate, UINavig
 
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
-        imageStore.setImage(image, forKey: supply.supplyKey)
+        imageStore.setImage(image, forKey: supply.supplyKey!)
         imageView.image = image
         
 //        editorButtons.isHidden = false

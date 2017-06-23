@@ -11,6 +11,11 @@ import WebKit
 
 class TIBWebViewController: UIViewController {
     var webView: WKWebView!
+    @IBAction func artButtonClicked(_ sender: UIBarButtonItem) {
+        let url = webView.url
+        print("\(url)")
+        print("\(webView.title)")
+    }
     
     override func viewDidLoad() {
         webView = WKWebView()
