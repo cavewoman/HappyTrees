@@ -19,6 +19,11 @@ class SuppliesViewController: UITableViewController {
         case empty
     }
     
+    required init?(coder aDecoder: NSCoder) {
+        super.init(coder: aDecoder)
+        navigationItem.leftBarButtonItem = editButtonItem
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         tableView.reloadData()
@@ -49,6 +54,14 @@ class SuppliesViewController: UITableViewController {
         }
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let supply = supplyStore.allSupplies[indexPath.row]
+            supplyStore.removeSupply(supply)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
