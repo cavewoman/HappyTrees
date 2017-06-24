@@ -50,5 +50,17 @@ class ImageStore {
         let documentDirectory = documentsDirectories.first!
         return documentDirectory.appendingPathComponent(key)
     }
+    
+    func allImages(fromKeys keys: [String]) -> [UIImage] {
+        var allImages = [UIImage]()
+        
+        for key in keys {
+            if let image = image(forKey: key) {
+                allImages.append(image)
+            }
+        }
+        
+        return allImages
+    }
 }
 

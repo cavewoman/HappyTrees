@@ -28,12 +28,19 @@ class FavoritesViewController: UITableViewController {
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FavoriteCell", for: indexPath)
         
-        
         let favorite = favoriteStore.allFavorites[indexPath.row]
         
         cell.textLabel?.text = getTitleName(title: favorite.title!)
         
         return cell
+    }
+    
+    override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            let favorite = favoriteStore.allFavorites[indexPath.row]
+            favoriteStore.removeFavorite(favorite)
+            tableView.deleteRows(at: [indexPath], with: .automatic)
+        }
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

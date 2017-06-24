@@ -14,6 +14,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var window: UIWindow?
     let supplyStore = SupplyStore()
     let favoriteStore = FavoriteStore()
+    let paintingStore = PaintingStore()
 
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Create stores
@@ -37,6 +38,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         let favoritesNavController = tabController.viewControllers?[2] as! UINavigationController
         let favoritesViewController = favoritesNavController.topViewController as! FavoritesViewController
         favoritesViewController.favoriteStore = favoriteStore
+        
+        let paintingNavController = tabController.viewControllers?[3] as! UINavigationController
+        let paintingsViewController = paintingNavController.topViewController as! PaintingsViewController
+        paintingsViewController.paintingStore = paintingStore
+        paintingsViewController.imageStore = imageStore
         
 
         return true

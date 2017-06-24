@@ -22,6 +22,13 @@
 		D34264C71EFB3C8F00DF0894 /* Supply.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34264C61EFB3C8F00DF0894 /* Supply.swift */; };
 		D34264C91EFB3E8900DF0894 /* SupplyStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34264C81EFB3E8900DF0894 /* SupplyStore.swift */; };
 		D34264CB1EFB41B800DF0894 /* SupplyDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34264CA1EFB41B800DF0894 /* SupplyDetailViewController.swift */; };
+		D361ABC91EFEA282004DEC54 /* PaintingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361ABC81EFEA282004DEC54 /* PaintingsViewController.swift */; };
+		D361ABCB1EFEA3A3004DEC54 /* Painting.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361ABCA1EFEA3A3004DEC54 /* Painting.swift */; };
+		D361ABCD1EFEA4A4004DEC54 /* PaintingStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361ABCC1EFEA4A4004DEC54 /* PaintingStore.swift */; };
+		D361ABCF1EFEA716004DEC54 /* PaintingDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361ABCE1EFEA716004DEC54 /* PaintingDetailViewController.swift */; };
+		D361ABD11EFEB5A2004DEC54 /* PaintingImageDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361ABD01EFEB5A2004DEC54 /* PaintingImageDataSource.swift */; };
+		D361ABD31EFEB629004DEC54 /* PaintingImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361ABD21EFEB629004DEC54 /* PaintingImage.swift */; };
+		D361ABD51EFEB7D1004DEC54 /* PaintingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D361ABD41EFEB7D1004DEC54 /* PaintingCollectionViewCell.swift */; };
 		D3FBD9841EFB810800CD200E /* ImageStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3FBD9831EFB810800CD200E /* ImageStore.swift */; };
 /* End PBXBuildFile section */
 
@@ -64,6 +71,13 @@
 		D34264C61EFB3C8F00DF0894 /* Supply.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Supply.swift; sourceTree = "<group>"; };
 		D34264C81EFB3E8900DF0894 /* SupplyStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplyStore.swift; sourceTree = "<group>"; };
 		D34264CA1EFB41B800DF0894 /* SupplyDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SupplyDetailViewController.swift; sourceTree = "<group>"; };
+		D361ABC81EFEA282004DEC54 /* PaintingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingsViewController.swift; sourceTree = "<group>"; };
+		D361ABCA1EFEA3A3004DEC54 /* Painting.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Painting.swift; sourceTree = "<group>"; };
+		D361ABCC1EFEA4A4004DEC54 /* PaintingStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingStore.swift; sourceTree = "<group>"; };
+		D361ABCE1EFEA716004DEC54 /* PaintingDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingDetailViewController.swift; sourceTree = "<group>"; };
+		D361ABD01EFEB5A2004DEC54 /* PaintingImageDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingImageDataSource.swift; sourceTree = "<group>"; };
+		D361ABD21EFEB629004DEC54 /* PaintingImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingImage.swift; sourceTree = "<group>"; };
+		D361ABD41EFEB7D1004DEC54 /* PaintingCollectionViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingCollectionViewCell.swift; sourceTree = "<group>"; };
 		D3FBD9831EFB810800CD200E /* ImageStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImageStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -117,6 +131,13 @@
 			children = (
 				D34264941EFB1E9D00DF0894 /* AppDelegate.swift */,
 				D34264981EFB1E9D00DF0894 /* Main.storyboard */,
+				D361ABCE1EFEA716004DEC54 /* PaintingDetailViewController.swift */,
+				D361ABCA1EFEA3A3004DEC54 /* Painting.swift */,
+				D361ABCC1EFEA4A4004DEC54 /* PaintingStore.swift */,
+				D361ABC81EFEA282004DEC54 /* PaintingsViewController.swift */,
+				D361ABD01EFEB5A2004DEC54 /* PaintingImageDataSource.swift */,
+				D361ABD41EFEB7D1004DEC54 /* PaintingCollectionViewCell.swift */,
+				D361ABD21EFEB629004DEC54 /* PaintingImage.swift */,
 				D32821821EFDDFD600D9CCDB /* FavoriteWebViewController.swift */,
 				D328217E1EFDC96C00D9CCDB /* Favorite.swift */,
 				D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */,
@@ -289,14 +310,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D361ABD11EFEB5A2004DEC54 /* PaintingImageDataSource.swift in Sources */,
+				D361ABD31EFEB629004DEC54 /* PaintingImage.swift in Sources */,
+				D361ABD51EFEB7D1004DEC54 /* PaintingCollectionViewCell.swift in Sources */,
 				D34264C71EFB3C8F00DF0894 /* Supply.swift in Sources */,
 				D34264C51EFB3C6600DF0894 /* SuppliesViewController.swift in Sources */,
 				D328217D1EFDC6B000D9CCDB /* FavoritesViewController.swift in Sources */,
 				D32821811EFDCA2E00D9CCDB /* FavoriteStore.swift in Sources */,
 				D32821831EFDDFD600D9CCDB /* FavoriteWebViewController.swift in Sources */,
 				D34264951EFB1E9D00DF0894 /* AppDelegate.swift in Sources */,
+				D361ABCF1EFEA716004DEC54 /* PaintingDetailViewController.swift in Sources */,
 				D34264C31EFB1F5E00DF0894 /* TIBHomeWebViewController.swift in Sources */,
+				D361ABCD1EFEA4A4004DEC54 /* PaintingStore.swift in Sources */,
 				D34264CB1EFB41B800DF0894 /* SupplyDetailViewController.swift in Sources */,
+				D361ABC91EFEA282004DEC54 /* PaintingsViewController.swift in Sources */,
+				D361ABCB1EFEA3A3004DEC54 /* Painting.swift in Sources */,
 				D328217F1EFDC96C00D9CCDB /* Favorite.swift in Sources */,
 				D3FBD9841EFB810800CD200E /* ImageStore.swift in Sources */,
 				D34264C91EFB3E8900DF0894 /* SupplyStore.swift in Sources */,

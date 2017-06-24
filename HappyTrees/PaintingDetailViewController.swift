@@ -1,27 +1,23 @@
 //
-//  SupplyDetailViewController.swift
+//  PaintingDetailViewController.swift
 //  HappyTrees
 //
-//  Created by Anna Chan on 6/21/17.
+//  Created by Anna Chan on 6/24/17.
 //  Copyright © 2017 Anna Sherman. All rights reserved.
 //
 
-import Foundation
-
-
 import UIKit
 
-class SupplyDetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
-    @IBOutlet var nameField: UITextField!
-    @IBOutlet var typeField: UITextField!
-    @IBOutlet var amountField: UITextField!
-
+class PaintingDetailViewController: UIViewController, UITextFieldDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+    @IBOutlet var titleField: UITextField!
+    @IBOutlet var dateCreated: UILabel!
     @IBOutlet var imageView: UIImageView!
     @IBOutlet var removeImageButton: UIButton!
+    
     @IBAction func backgroundTapped(_ sender: UITapGestureRecognizer) {
         view.endEditing(true)
     }
-   
+    
     @IBAction func takePicture(_ sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         
@@ -35,53 +31,32 @@ class SupplyDetailViewController: UIViewController, UITextFieldDelegate, UINavig
         imagePicker.allowsEditing = true
         present(imagePicker, animated: true, completion: nil)
     }
+    
     @IBAction func removePicture(_ sender: UIButton) {
-        let key = supply.supplyKey
+        let key = painting.paintingKey
         imageStore.deleteImage(forKey: key!)
         imageView.image = nil
         removeImageButton.isHidden = true
     }
     
-    var supply: Supply! {
+    var painting: Painting! {
         didSet {
-            navigationItem.title = supply.name
+            navigationItem.title = painting.title
         }
     }
-    
-    var supplyStore: SupplyStore!
-    
+    var paintingStore: PaintingStore!
     var imageStore: ImageStore!
-    
-    let numberFormatter: NumberFormatter = {
-        let formatter = NumberFormatter()
-        formatter.numberStyle = .decimal
-        formatter.minimumFractionDigits = 2
-        formatter.maximumFractionDigits = 2
-        return formatter
-    }()
-    
-    let dateFormatter: DateFormatter = {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .none
-        return formatter
-    }()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        if let supplyName = supply.name {
-            nameField.text = supplyName
+        if let paintingTitle = painting.title {
+            titleField.text = paintingTitle
         }
+       
+        dateCreated.text = "\(painting.dateCreated)"
         
-        if let supplyType = supply.type {
-            typeField.text = supplyType
-        }
-        
-        amountField.text = "\(supply.amount!)"
-        
-        
-        let key = supply.supplyKey
+        let key = painting.paintingKey
         let imageToDisplay = imageStore.image(forKey: key!)
         if (imageToDisplay != nil) {
             removeImageButton.isHidden = false
@@ -89,34 +64,30 @@ class SupplyDetailViewController: UIViewController, UITextFieldDelegate, UINavig
             removeImageButton.isHidden = true
         }
         imageView.image = imageToDisplay
-        
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
         view.endEditing(true)
-        if let enteredName = nameField.text, enteredName != "" {
-            supply.name = nameField.text
-            supply.type = typeField.text ?? ""
-            supply.amount = Double(amountField.text!) ?? 0.0
+        if let enteredTitle = titleField.text, enteredTitle != "" {
+            painting.title = titleField.text
         } else {
-            supplyStore.removeSupply(supply)
+            paintingStore.removePainting(painting)
         }
         
-        
     }
-
+    
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return true
     }
-
+    
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
         let image = info[UIImagePickerControllerEditedImage] as! UIImage
-        imageStore.setImage(image, forKey: supply.supplyKey!)
+        imageStore.setImage(image, forKey: painting.paintingKey!)
         imageView.image = image
-                
+        
         dismiss(animated: true, completion: nil)
     }
     
