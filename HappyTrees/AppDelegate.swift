@@ -69,6 +69,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         } else {
             print("Could not dave any of the favorites")
         }
+        let paintingSuccess = paintingStore.saveChanges()
+        if (paintingSuccess) {
+            print("Saved all of the favorites")
+        } else {
+            print("Could not dave any of the favorites")
+        }
 
     }
 
