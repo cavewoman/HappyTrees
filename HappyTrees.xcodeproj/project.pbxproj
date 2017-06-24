@@ -10,6 +10,7 @@
 		D328217D1EFDC6B000D9CCDB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328217C1EFDC6B000D9CCDB /* FavoritesViewController.swift */; };
 		D328217F1EFDC96C00D9CCDB /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328217E1EFDC96C00D9CCDB /* Favorite.swift */; };
 		D32821811EFDCA2E00D9CCDB /* FavoriteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */; };
+		D32821831EFDDFD600D9CCDB /* FavoriteWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32821821EFDDFD600D9CCDB /* FavoriteWebViewController.swift */; };
 		D34264951EFB1E9D00DF0894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34264941EFB1E9D00DF0894 /* AppDelegate.swift */; };
 		D342649A1EFB1E9D00DF0894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34264981EFB1E9D00DF0894 /* Main.storyboard */; };
 		D342649C1EFB1E9D00DF0894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D342649B1EFB1E9D00DF0894 /* Assets.xcassets */; };
@@ -45,6 +46,7 @@
 		D328217C1EFDC6B000D9CCDB /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		D328217E1EFDC96C00D9CCDB /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStore.swift; sourceTree = "<group>"; };
+		D32821821EFDDFD600D9CCDB /* FavoriteWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteWebViewController.swift; sourceTree = "<group>"; };
 		D34264911EFB1E9D00DF0894 /* HappyTrees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyTrees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34264941EFB1E9D00DF0894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D34264991EFB1E9D00DF0894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -115,6 +117,7 @@
 			children = (
 				D34264941EFB1E9D00DF0894 /* AppDelegate.swift */,
 				D34264981EFB1E9D00DF0894 /* Main.storyboard */,
+				D32821821EFDDFD600D9CCDB /* FavoriteWebViewController.swift */,
 				D328217E1EFDC96C00D9CCDB /* Favorite.swift */,
 				D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */,
 				D328217C1EFDC6B000D9CCDB /* FavoritesViewController.swift */,
@@ -290,6 +293,7 @@
 				D34264C51EFB3C6600DF0894 /* SuppliesViewController.swift in Sources */,
 				D328217D1EFDC6B000D9CCDB /* FavoritesViewController.swift in Sources */,
 				D32821811EFDCA2E00D9CCDB /* FavoriteStore.swift in Sources */,
+				D32821831EFDDFD600D9CCDB /* FavoriteWebViewController.swift in Sources */,
 				D34264951EFB1E9D00DF0894 /* AppDelegate.swift in Sources */,
 				D34264C31EFB1F5E00DF0894 /* TIBHomeWebViewController.swift in Sources */,
 				D34264CB1EFB41B800DF0894 /* SupplyDetailViewController.swift in Sources */,

@@ -23,7 +23,7 @@ class FavoriteStore {
         }
     }
     
-    @discardableResult func createFavorite(title: String, url: String) -> Favorite {
+    @discardableResult func createFavorite(title: String, url: URL) -> Favorite {
         let newFavorite = Favorite(title: title, url: url)
         
         allFavorites.append(newFavorite)

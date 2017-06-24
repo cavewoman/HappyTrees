@@ -11,10 +11,13 @@ import WebKit
 
 class TIBWebViewController: UIViewController {
     var webView: WKWebView!
+    var favoriteStore: FavoriteStore!
+    
     @IBAction func artButtonClicked(_ sender: UIBarButtonItem) {
         let url = webView.url
         print("\(url)")
         print("\(webView.title)")
+        favoriteStore.createFavorite(title: webView.title!, url: webView.url!)
     }
     
     override func viewDidLoad() {

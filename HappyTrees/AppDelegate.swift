@@ -29,9 +29,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         suppliesViewController.supplyStore = supplyStore
         suppliesViewController.imageStore = imageStore
         
+        let webNavController = tabController.viewControllers?[1] as! UINavigationController
+        let tibHomeViewController = webNavController.topViewController as! TIBWebViewController
+        tibHomeViewController.favoriteStore = favoriteStore
+
+        
         let favoritesNavController = tabController.viewControllers?[2] as! UINavigationController
         let favoritesViewController = favoritesNavController.topViewController as! FavoritesViewController
         favoritesViewController.favoriteStore = favoriteStore
+        
 
         return true
     }

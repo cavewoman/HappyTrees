@@ -10,10 +10,10 @@ import UIKit
 
 class Favorite: NSObject, NSCoding {
     var title: String?
-    var url: String?
+    var url: URL?
     var favoriteKey: String?
     
-    init(title: String, url: String) {
+    init(title: String, url: URL) {
         self.title = title
         self.url = url
         self.favoriteKey = UUID().uuidString
@@ -23,7 +23,7 @@ class Favorite: NSObject, NSCoding {
     
     required init(coder aDecoder: NSCoder) {
         title = aDecoder.decodeObject(forKey: "title") as! String?
-        url = aDecoder.decodeObject(forKey: "url") as! String?
+        url = aDecoder.decodeObject(forKey: "url") as! URL?
         favoriteKey = aDecoder.decodeObject(forKey: "favoriteKey") as! String?
         
         
