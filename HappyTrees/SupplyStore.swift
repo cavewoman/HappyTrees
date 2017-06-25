@@ -50,5 +50,34 @@ class SupplyStore {
         print("Saving supplies to: \(supplyArchiveURL.path)")
         return NSKeyedArchiver.archiveRootObject(allSupplies, toFile: supplyArchiveURL.path)
     }
+    
+    func getAllSortedSupplies() -> [Supply] {
+        return allSupplies.sorted { $0.name! < $1.name! }
+    }
+    
+    func getSortedOilPaints() -> [Supply] {
+        let oilPaints = allSupplies.filter { $0.type! == "Oil Paint" }
+        return oilPaints.sorted { $0.name! < $1.name! }
+    }
+    
+    func getSortedAcrylicPaints() -> [Supply] {
+        let acrylicPaints = allSupplies.filter { $0.type! == "Acrylic Paint" }
+        return acrylicPaints.sorted { $0.name! < $1.name! }
+    }
+    
+    func getSortedBrushes() -> [Supply] {
+        let brushes = allSupplies.filter { $0.type! == "Brush" }
+        return brushes.sorted { $0.name! < $1.name! }
+    }
 
+    func getSortedCanvas() -> [Supply] {
+        let canvas = allSupplies.filter { $0.type! == "Canvas"}
+        return canvas.sorted { $0.name! < $1.name! }
+    }
+    
+    func getSortedMediums() -> [Supply] {
+        let mediums = allSupplies.filter { $0.type! == "Medium" }
+        return mediums.sorted { $0.name! < $1.name! }
+    }
+    
 }

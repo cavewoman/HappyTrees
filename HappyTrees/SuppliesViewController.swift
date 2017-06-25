@@ -29,19 +29,74 @@ class SuppliesViewController: UITableViewController {
         tableView.reloadData()
     }
     
+    override func numberOfSections(in tableView: UITableView) -> Int {
+        return 5
+    }
+    
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return supplyStore.allSupplies.count
+        switch section {
+        case 0:
+            return supplyStore.getSortedOilPaints().count
+        case 1:
+            return supplyStore.getSortedAcrylicPaints().count
+        case 2:
+            return supplyStore.getSortedMediums().count
+        case 3:
+            return supplyStore.getSortedCanvas().count
+        case 4:
+            return supplyStore.getSortedBrushes().count
+        default:
+            return supplyStore.allSupplies.count
+        }
+    }
+    
+    override func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Oil Paints"
+        case 1:
+            return "Acrylic Paints"
+        case 2:
+            return "Mediums"
+        case 3:
+            return "Canvas"
+        case 4:
+            return "Brushes"
+        default:
+            return "Supplies"
+        }
+
     }
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "SupplyCell", for: indexPath)
         
+        let supply: Supply
         
-        let supply = supplyStore.allSupplies[indexPath.row]
+        switch indexPath.section {
+        case 0:
+            supply = supplyStore.getSortedOilPaints()[indexPath.row]
+        case 1:
+            supply = supplyStore.getSortedAcrylicPaints()[indexPath.row]
+        case 2:
+            supply = supplyStore.getSortedMediums()[indexPath.row]
+        case 3:
+            supply = supplyStore.getSortedCanvas()[indexPath.row]
+        case 4:
+            supply = supplyStore.getSortedBrushes()[indexPath.row]
+        default:
+            supply = supplyStore.getAllSortedSupplies()[indexPath.row]
+        }
         
         cell.textLabel?.text = supply.name
         cell.detailTextLabel?.text = "\(supply.amount!)"
-        switch getAmountType(amount: supply.amount) {
+        setBackgoundColor(cell: cell, amount: supply.amount!)
+        
+        return cell
+    }
+    
+    func setBackgoundColor(cell: UITableViewCell, amount: Double){
+        switch getAmountType(amount: amount) {
         case .moreThanHalfFull:
             cell.backgroundColor = UIColor().colorFromHex(hexValue: "6a8347")
         case .halfFull:
@@ -52,13 +107,11 @@ class SuppliesViewController: UITableViewController {
             cell.backgroundColor = UIColor().colorFromHex(hexValue: "fefcd7")
             
         }
-        
-        return cell
     }
     
     override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            let supply = supplyStore.allSupplies[indexPath.row]
+            let supply = supplyStore.getAllSortedSupplies()[indexPath.row]
             supplyStore.removeSupply(supply)
             tableView.deleteRows(at: [indexPath], with: .automatic)
         }
@@ -73,8 +126,23 @@ class SuppliesViewController: UITableViewController {
             supplyDetailViewController.imageStore = imageStore
             supplyDetailViewController.supplyStore = supplyStore
         case "updateSupplyDetails"?:
-            if let row = tableView.indexPathForSelectedRow?.row {
-                let supply = supplyStore.allSupplies[row]
+            let supply: Supply
+            if let indexPath = tableView.indexPathForSelectedRow {
+                switch indexPath.section {
+                case 0:
+                    supply = supplyStore.getSortedOilPaints()[indexPath.row]
+                case 1:
+                    supply = supplyStore.getSortedAcrylicPaints()[indexPath.row]
+                case 2:
+                    supply = supplyStore.getSortedMediums()[indexPath.row]
+                case 3:
+                    supply = supplyStore.getSortedCanvas()[indexPath.row]
+                case 4:
+                    supply = supplyStore.getSortedBrushes()[indexPath.row]
+                default:
+                    supply = supplyStore.getAllSortedSupplies()[indexPath.row]
+                }
+
                 let supplyDetailViewController = segue.destination as! SupplyDetailViewController
                 supplyDetailViewController.supply = supply
                 supplyDetailViewController.imageStore = imageStore
@@ -123,7 +191,7 @@ extension UIColor {
         var redText: String = "0x"
         var greenText: String = "0x"
         var blueText: String = "0x"
-
+        
         for (index, char) in hexValue.characters.enumerated() {
             switch index {
             case 0, 1:
