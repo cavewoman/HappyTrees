@@ -22,7 +22,7 @@ class TIBWebViewController: UIViewController {
         
         view = webView
         
-        let myURL = URL(string: "http://www.twoinchbrush.com/")
+        let myURL = URL(string: "http://www.twoinchbrush.com/all-paintings")
         let myRequest = URLRequest(url: myURL!)
         webView.load(myRequest)
         
