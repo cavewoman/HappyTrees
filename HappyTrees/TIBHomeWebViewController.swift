@@ -9,7 +9,7 @@
 import Foundation
 import WebKit
 
-class TIBWebViewController: UIViewController {
+class TIBWebViewController: UIViewController, WKNavigationDelegate {
     var webView: WKWebView!
     var favoriteStore: FavoriteStore!
     
@@ -17,6 +17,9 @@ class TIBWebViewController: UIViewController {
         favoriteStore.createFavorite(title: webView.title!, url: webView.url!)
     }
     
+    @IBAction func navigateBackInWebButtonClicked(_ sender: UIBarButtonItem) {
+        webView.goBack()
+    }
     override func viewDidLoad() {
         webView = WKWebView()
         

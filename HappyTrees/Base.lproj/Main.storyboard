@@ -24,6 +24,11 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                     <navigationItem key="navigationItem" title="www.twoinchbruch.com" id="Jmy-my-bV0">
+                        <barButtonItem key="leftBarButtonItem" image="icons8-Back-30" id="mdH-eW-eSA">
+                            <connections>
+                                <action selector="navigateBackInWebButtonClicked:" destination="BYZ-38-t0r" id="ohh-T2-wCn"/>
+                            </connections>
+                        </barButtonItem>
                         <barButtonItem key="rightBarButtonItem" image="icons8-Paint Palette-25" id="dvZ-SZ-GmM">
                             <connections>
                                 <action selector="artButtonClicked:" destination="BYZ-38-t0r" id="H3B-QI-maH"/>
@@ -503,6 +508,7 @@
         </scene>
     </scenes>
     <resources>
+        <image name="icons8-Back-30" width="30" height="30"/>
         <image name="icons8-Easel-25" width="25" height="25"/>
         <image name="icons8-Paint Brush-25" width="25" height="25"/>
         <image name="icons8-Paint Palette-25" width="25" height="25"/>
