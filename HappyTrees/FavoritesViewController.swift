@@ -45,11 +45,11 @@ class FavoritesViewController: UITableViewController {
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         switch segue.identifier {
-        case "showFavoriteWebView"?:
+        case "showFavoriteImageView"?:
             if let row = tableView.indexPathForSelectedRow?.row {
                 let favorite = favoriteStore.allFavorites[row]
-                let favoriteWebViewController = segue.destination as! FavoriteWevViewController
-                favoriteWebViewController.favorite = favorite
+                let favoriteImageViewController = segue.destination as! FavoriteImageViewController
+                favoriteImageViewController.favorite = favorite
             }
         default:
             preconditionFailure("Unexpected segues identifier.")

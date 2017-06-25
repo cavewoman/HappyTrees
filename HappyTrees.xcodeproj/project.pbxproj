@@ -11,6 +11,7 @@
 		D328217F1EFDC96C00D9CCDB /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328217E1EFDC96C00D9CCDB /* Favorite.swift */; };
 		D32821811EFDCA2E00D9CCDB /* FavoriteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */; };
 		D32821831EFDDFD600D9CCDB /* FavoriteWebViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32821821EFDDFD600D9CCDB /* FavoriteWebViewController.swift */; };
+		D33A4BA81F00234E00E3696E /* FavoriteImageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D33A4BA71F00234E00E3696E /* FavoriteImageViewController.swift */; };
 		D34264951EFB1E9D00DF0894 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34264941EFB1E9D00DF0894 /* AppDelegate.swift */; };
 		D342649A1EFB1E9D00DF0894 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D34264981EFB1E9D00DF0894 /* Main.storyboard */; };
 		D342649C1EFB1E9D00DF0894 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D342649B1EFB1E9D00DF0894 /* Assets.xcassets */; };
@@ -54,6 +55,7 @@
 		D328217E1EFDC96C00D9CCDB /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStore.swift; sourceTree = "<group>"; };
 		D32821821EFDDFD600D9CCDB /* FavoriteWebViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteWebViewController.swift; sourceTree = "<group>"; };
+		D33A4BA71F00234E00E3696E /* FavoriteImageViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteImageViewController.swift; sourceTree = "<group>"; };
 		D34264911EFB1E9D00DF0894 /* HappyTrees.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HappyTrees.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D34264941EFB1E9D00DF0894 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D34264991EFB1E9D00DF0894 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -131,6 +133,7 @@
 			children = (
 				D34264941EFB1E9D00DF0894 /* AppDelegate.swift */,
 				D34264981EFB1E9D00DF0894 /* Main.storyboard */,
+				D33A4BA71F00234E00E3696E /* FavoriteImageViewController.swift */,
 				D361ABCE1EFEA716004DEC54 /* PaintingDetailViewController.swift */,
 				D361ABCA1EFEA3A3004DEC54 /* Painting.swift */,
 				D361ABCC1EFEA4A4004DEC54 /* PaintingStore.swift */,
@@ -318,6 +321,7 @@
 				D328217D1EFDC6B000D9CCDB /* FavoritesViewController.swift in Sources */,
 				D32821811EFDCA2E00D9CCDB /* FavoriteStore.swift in Sources */,
 				D32821831EFDDFD600D9CCDB /* FavoriteWebViewController.swift in Sources */,
+				D33A4BA81F00234E00E3696E /* FavoriteImageViewController.swift in Sources */,
 				D34264951EFB1E9D00DF0894 /* AppDelegate.swift in Sources */,
 				D361ABCF1EFEA716004DEC54 /* PaintingDetailViewController.swift in Sources */,
 				D34264C31EFB1F5E00DF0894 /* TIBHomeWebViewController.swift in Sources */,

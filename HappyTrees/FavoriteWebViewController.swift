@@ -9,7 +9,7 @@
 import UIKit
 import WebKit
 
-class FavoriteWevViewController: UIViewController {
+class FavoriteWebViewController: UIViewController {
     var webView: WKWebView!
     var favorite: Favorite! {
         didSet {

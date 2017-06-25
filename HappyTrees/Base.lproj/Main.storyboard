@@ -120,7 +120,7 @@
                                     </subviews>
                                 </tableViewCellContentView>
                                 <connections>
-                                    <segue destination="gk8-kY-huA" kind="show" identifier="showFavoriteWebView" id="dNo-h2-Vu4"/>
+                                    <segue destination="jBX-rf-DhJ" kind="show" identifier="showFavoriteImageView" id="gpn-xp-iYv"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -182,10 +182,10 @@
             </objects>
             <point key="canvasLocation" x="1903.2" y="2226.8365817091458"/>
         </scene>
-        <!--Favorite Wev View Controller-->
+        <!--Favorite Web View Controller-->
         <scene sceneID="VsE-q2-E7L">
             <objects>
-                <viewController id="gk8-kY-huA" customClass="FavoriteWevViewController" customModule="HappyTrees" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="gk8-kY-huA" customClass="FavoriteWebViewController" customModule="HappyTrees" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="PbP-t9-686"/>
                         <viewControllerLayoutGuide type="bottom" id="Q8t-b3-eeK"/>
@@ -198,7 +198,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gPV-CW-6wm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2601" y="1531"/>
+            <point key="canvasLocation" x="3303" y="1531"/>
         </scene>
         <!--Title-->
         <scene sceneID="Y3N-tF-8bG">
@@ -487,6 +487,43 @@
             </objects>
             <point key="canvasLocation" x="2601" y="2227"/>
         </scene>
+        <!--Title-->
+        <scene sceneID="YAq-Wc-UTo">
+            <objects>
+                <viewController id="jBX-rf-DhJ" customClass="FavoriteImageViewController" customModule="HappyTrees" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="0y8-6D-v2h"/>
+                        <viewControllerLayoutGuide type="bottom" id="ppf-oL-MQU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="LQB-7L-LRM">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="eKP-Fa-7N0">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="eKP-Fa-7N0" firstAttribute="top" secondItem="LQB-7L-LRM" secondAttribute="top" id="9Jf-cg-daJ"/>
+                            <constraint firstItem="eKP-Fa-7N0" firstAttribute="leading" secondItem="LQB-7L-LRM" secondAttribute="leading" id="9dK-zm-IP2"/>
+                            <constraint firstAttribute="trailing" secondItem="eKP-Fa-7N0" secondAttribute="trailing" id="Ypi-Fq-tj1"/>
+                            <constraint firstAttribute="bottom" secondItem="eKP-Fa-7N0" secondAttribute="bottom" id="kuh-qp-Rpt"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Title" id="h9O-F2-NUJ">
+                        <barButtonItem key="rightBarButtonItem" image="icons8-Web-35" id="yCo-2T-ihR">
+                            <connections>
+                                <segue destination="gk8-kY-huA" kind="show" identifier="showFavoriteWebView" id="atE-Gc-s1s"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QQu-QS-tFb" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2601" y="1531"/>
+        </scene>
         <!--Paintings-->
         <scene sceneID="pnI-LY-q8P">
             <objects>
@@ -513,6 +550,7 @@
         <image name="icons8-Paint Brush-25" width="25" height="25"/>
         <image name="icons8-Paint Palette-25" width="25" height="25"/>
         <image name="icons8-Web-25" width="25" height="25"/>
+        <image name="icons8-Web-35" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="rrv-Tx-B6U"/>
