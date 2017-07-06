@@ -21,14 +21,10 @@ class PaintingDetailViewController: UIViewController, UITextFieldDelegate, UINav
     @IBAction func takePicture(_ sender: UIBarButtonItem) {
         let imagePicker = UIImagePickerController()
         
-        if UIImagePickerController.isSourceTypeAvailable(.camera) {
-            imagePicker.sourceType = .camera
-        } else {
-            imagePicker.sourceType = .photoLibrary
-        }
+        imagePicker.sourceType = .photoLibrary
         
         imagePicker.delegate = self
-        imagePicker.allowsEditing = true
+        imagePicker.allowsEditing = false
         present(imagePicker, animated: true, completion: nil)
     }
     
@@ -84,7 +80,7 @@ class PaintingDetailViewController: UIViewController, UITextFieldDelegate, UINav
     }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-        let image = info[UIImagePickerControllerEditedImage] as! UIImage
+        let image = info[UIImagePickerControllerOriginalImage] as! UIImage
         imageStore.setImage(image, forKey: painting.paintingKey!)
         imageView.image = image
         
