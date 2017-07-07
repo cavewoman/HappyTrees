@@ -30,8 +30,15 @@ class FavoriteStore {
     return newFavorite
   }
   
-  @discardableResult func createFavorite(title: String, url: URL, favoriteKey: String) -> Favorite {
-    let newFavorite = Favorite(title: title, url: url, favoriteKey: favoriteKey)
+  @discardableResult func createFavorite(title: String, url: URL, requiredSupplyNames: [String]) -> Favorite {
+    let newFavorite = Favorite(title: title, url: url, requiredSupplyNames: requiredSupplyNames)
+    
+    allFavorites.append(newFavorite)
+    return newFavorite
+  }
+  
+  @discardableResult func createFavorite(title: String, url: URL, favoriteKey: String, requiredSupplyNames: [String]) -> Favorite {
+    let newFavorite = Favorite(title: title, url: url, favoriteKey: favoriteKey, requiredSupplyNames: requiredSupplyNames)
     
     allFavorites.append(newFavorite)
     return newFavorite

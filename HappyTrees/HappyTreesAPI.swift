@@ -139,7 +139,7 @@ class HappyTreesAPI {
         foundFavorite.url = URL(string: (favoriteData["url"] as? String)!)
       } else {
         print("Creating favorite")
-        favoriteStore.createFavorite(title: favoriteData["title"] as! String, url: URL(string: favoriteData["url"] as! String)!, favoriteKey: favoriteData["favorite_key"] as! String)
+        favoriteStore.createFavorite(title: favoriteData["title"] as! String, url: URL(string: favoriteData["url"] as! String)!, favoriteKey: favoriteData["favorite_key"] as! String, requiredSupplyNames: [])
       }
     }
   }

@@ -31,7 +31,6 @@ class FavoriteWebViewController: UIViewController {
         let fullTitle = title.components(separatedBy: "-")
         
         let name = fullTitle[0]
-        print("\(name)")
         return "\(name)"
     }
     
