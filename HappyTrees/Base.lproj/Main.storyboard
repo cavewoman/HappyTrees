@@ -7,6 +7,7 @@
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12089"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
+        <capability name="Navigation items with more than one left or right bar item" minToolsVersion="7.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -178,11 +179,18 @@
                         </connections>
                     </tableView>
                     <navigationItem key="navigationItem" title="Paintings" id="Aho-xB-MbE">
-                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="bq4-qO-mvQ">
-                            <connections>
-                                <segue destination="kmO-Dd-gXH" kind="show" identifier="addPainting" id="oSj-WX-qK2"/>
-                            </connections>
-                        </barButtonItem>
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="bq4-qO-mvQ">
+                                <connections>
+                                    <segue destination="kmO-Dd-gXH" kind="show" identifier="addPainting" id="oSj-WX-qK2"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="icons8-Grid Filled-25" id="bik-dj-6wd">
+                                <connections>
+                                    <segue destination="qL7-JZ-YHO" kind="show" identifier="showCollectionView" id="piJ-lw-kfy"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
                     </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pnf-lW-JZW" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -501,6 +509,85 @@
             </objects>
             <point key="canvasLocation" x="2601" y="2227"/>
         </scene>
+        <!--Paintings-->
+        <scene sceneID="Yjd-58-xWp">
+            <objects>
+                <viewController id="qL7-JZ-YHO" customClass="PaintingsCollectionViewController" customModule="HappyTrees" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="4Ei-Sx-4RJ"/>
+                        <viewControllerLayoutGuide type="bottom" id="8f3-ty-abe"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="urL-AA-qIF">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <collectionView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" translatesAutoresizingMaskIntoConstraints="NO" id="uTU-yx-M8u">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="2" minimumInteritemSpacing="2" id="90E-vo-VDF">
+                                    <size key="itemSize" width="90" height="90"/>
+                                    <size key="headerReferenceSize" width="0.0" height="0.0"/>
+                                    <size key="footerReferenceSize" width="0.0" height="0.0"/>
+                                    <inset key="sectionInset" minX="2" minY="2" maxX="2" maxY="2"/>
+                                </collectionViewFlowLayout>
+                                <cells>
+                                    <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" reuseIdentifier="UIPaintingCollectionViewCell" id="J43-bM-YVI" customClass="PaintingCollectionViewCell" customModule="HappyTrees" customModuleProvider="target">
+                                        <rect key="frame" x="2" y="2" width="90" height="90"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                                            <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="APl-Fx-UrQ">
+                                                    <rect key="frame" x="0.0" y="0.0" width="90" height="90"/>
+                                                </imageView>
+                                            </subviews>
+                                        </view>
+                                        <color key="backgroundColor" red="0.44901012890000003" green="0.64480675939999998" blue="0.66666666669999997" alpha="1" colorSpace="calibratedRGB"/>
+                                        <constraints>
+                                            <constraint firstItem="APl-Fx-UrQ" firstAttribute="leading" secondItem="J43-bM-YVI" secondAttribute="leading" id="39S-dT-L3R"/>
+                                            <constraint firstAttribute="bottom" secondItem="APl-Fx-UrQ" secondAttribute="bottom" id="UGj-c0-Cox"/>
+                                            <constraint firstItem="APl-Fx-UrQ" firstAttribute="top" secondItem="J43-bM-YVI" secondAttribute="top" id="nwM-wM-Iei"/>
+                                            <constraint firstAttribute="trailing" secondItem="APl-Fx-UrQ" secondAttribute="trailing" id="whd-1B-45q"/>
+                                        </constraints>
+                                        <connections>
+                                            <outlet property="imageView" destination="APl-Fx-UrQ" id="Pq6-Ak-NR1"/>
+                                            <segue destination="kmO-Dd-gXH" kind="show" identifier="showPaintingDetails" id="LsW-uI-yNF"/>
+                                        </connections>
+                                    </collectionViewCell>
+                                </cells>
+                            </collectionView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="uTU-yx-M8u" secondAttribute="bottom" id="1rY-1I-UUS"/>
+                            <constraint firstItem="uTU-yx-M8u" firstAttribute="top" secondItem="urL-AA-qIF" secondAttribute="top" id="Ffm-Qi-HEI"/>
+                            <constraint firstAttribute="trailing" secondItem="uTU-yx-M8u" secondAttribute="trailing" id="LMp-y3-Kz8"/>
+                            <constraint firstItem="uTU-yx-M8u" firstAttribute="leading" secondItem="urL-AA-qIF" secondAttribute="leading" id="obr-Jw-YnW"/>
+                        </constraints>
+                    </view>
+                    <navigationItem key="navigationItem" title="Paintings" id="fpc-jA-je8">
+                        <rightBarButtonItems>
+                            <barButtonItem systemItem="add" id="n9Z-7s-TKU">
+                                <connections>
+                                    <segue destination="kmO-Dd-gXH" kind="show" identifier="addPainting" id="Gyt-zo-pss"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem image="icons8-List Filled-25" id="gie-rs-JWo">
+                                <connections>
+                                    <segue destination="Hgk-YO-HDW" kind="show" identifier="showListView" id="qm8-Ww-w2y"/>
+                                </connections>
+                            </barButtonItem>
+                        </rightBarButtonItems>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="collectionView" destination="uTU-yx-M8u" id="sqB-Pc-y6k"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="ubI-ck-Jko" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1902" y="3017"/>
+        </scene>
         <!--Painting Date Picker View Controller-->
         <scene sceneID="Azx-vF-WiT">
             <objects>
@@ -596,13 +683,16 @@
     <resources>
         <image name="icons8-Back-30" width="30" height="30"/>
         <image name="icons8-Easel-25" width="25" height="25"/>
+        <image name="icons8-Grid Filled-25" width="25" height="25"/>
+        <image name="icons8-List Filled-25" width="25" height="25"/>
         <image name="icons8-Paint Brush-25" width="25" height="25"/>
         <image name="icons8-Paint Palette-25" width="25" height="25"/>
         <image name="icons8-Web-25" width="25" height="25"/>
         <image name="icons8-Web-35" width="35" height="35"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rrv-Tx-B6U"/>
         <segue reference="QgQ-JP-OAq"/>
+        <segue reference="Gyt-zo-pss"/>
+        <segue reference="qm8-Ww-w2y"/>
     </inferredMetricsTieBreakers>
 </document>

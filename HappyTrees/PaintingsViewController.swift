@@ -63,12 +63,16 @@ class PaintingsViewController: UITableViewController {
       paintingDetailViewController.paintingStore = paintingStore
     case "updatePainting"?:
       if let row = tableView.indexPathForSelectedRow?.row {
-        let painting = paintingStore.allPaintings[row]
+        let painting = paintingStore.getPaintingsSortedByDate()[row]
         let paintingDetailViewController = segue.destination as! PaintingDetailViewController
         paintingDetailViewController.painting = painting
         paintingDetailViewController.imageStore = imageStore
         paintingDetailViewController.paintingStore = paintingStore
       }
+    case "showCollectionView"?:
+      let paintingsCollectionViewController = segue.destination as! PaintingsCollectionViewController
+      paintingsCollectionViewController.imageStore = imageStore
+      paintingsCollectionViewController.paintingStore = paintingStore
     default:
       preconditionFailure("Unexpected segues identifier.")
     }

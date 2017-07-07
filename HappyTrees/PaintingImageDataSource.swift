@@ -9,16 +9,16 @@
 import UIKit
 
 class PaintingImageDataSource: NSObject, UICollectionViewDataSource {
-    var images = [UIImage]()
-    
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return images.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let identifier = "PaintingImageCollectionViewCell"
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! PaintingCollectionViewCell
-        return cell
-    }
+  var paintings = [Painting]()
+  
+  func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    return paintings.count
+  }
+  
+  func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+    let identifier = "UIPaintingCollectionViewCell"
+    let cell = collectionView.dequeueReusableCell(withReuseIdentifier: identifier, for: indexPath) as! PaintingCollectionViewCell
+    return cell
+  }
 }
 

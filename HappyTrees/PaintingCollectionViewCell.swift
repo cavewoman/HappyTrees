@@ -9,20 +9,26 @@
 import UIKit
 
 class PaintingCollectionViewCell: UICollectionViewCell {
-    @IBOutlet var imageView: UIImageView!
+  @IBOutlet var imageView: UIImageView!
+  
+  override func awakeFromNib() {
+    super.awakeFromNib()
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-    }
+    update(with: nil)
+  }
+  
+  override func prepareForReuse() {
+    super.prepareForReuse()
     
-    override func prepareForReuse() {
-        super.prepareForReuse()
+    update(with: nil)
+  }
+  
+  func update(with image: UIImage?) {
+    if let imageToDisplay = image {
+      imageView.image = imageToDisplay
+    } else {
+      imageView.image = nil
     }
-    
-    func update(with image: UIImage?) {
-        if let imageToDisplay = image {
-            imageView.image = imageToDisplay
-        }
-    }
+  }
 }
 
