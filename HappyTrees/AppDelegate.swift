@@ -23,6 +23,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     api.sync_supplies_down(supplyStore: supplyStore)
     api.sync_favorites_down(favoriteStore: favoriteStore)
+    api.sync_paintings_down(paintingStore: paintingStore)
     
     // Access trhe ItemsViewController and set its item store
     let tabController = window!.rootViewController as! UITabBarController
@@ -81,12 +82,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
    
     api.sync_supplies_up(supplyStore: supplyStore)
     api.sync_favorites_up(favoriteStore: favoriteStore)
+//    api.sync_paintings_up(paintingStore: paintingStore)
   }
   
   func applicationWillEnterForeground(_ application: UIApplication) {
     // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
     api.sync_supplies_down(supplyStore: supplyStore)
     api.sync_favorites_down(favoriteStore: favoriteStore)
+    api.sync_paintings_down(paintingStore: paintingStore)
   }
   
   func applicationDidBecomeActive(_ application: UIApplication) {
@@ -97,6 +100,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     api.sync_supplies_up(supplyStore: supplyStore)
     api.sync_favorites_up(favoriteStore: favoriteStore)
+//    api.sync_paintings_up(paintingStore: paintingStore)
   }
   
 }
