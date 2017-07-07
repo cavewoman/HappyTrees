@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		95DEAC091F0E96E600AE8854 /* HappyTreesAPI.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DEAC081F0E96E600AE8854 /* HappyTreesAPI.swift */; };
+		95DEAC0B1F0FD59300AE8854 /* PaintingDatePickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 95DEAC0A1F0FD59300AE8854 /* PaintingDatePickerViewController.swift */; };
 		D328217D1EFDC6B000D9CCDB /* FavoritesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328217C1EFDC6B000D9CCDB /* FavoritesViewController.swift */; };
 		D328217F1EFDC96C00D9CCDB /* Favorite.swift in Sources */ = {isa = PBXBuildFile; fileRef = D328217E1EFDC96C00D9CCDB /* Favorite.swift */; };
 		D32821811EFDCA2E00D9CCDB /* FavoriteStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */; };
@@ -53,6 +54,7 @@
 
 /* Begin PBXFileReference section */
 		95DEAC081F0E96E600AE8854 /* HappyTreesAPI.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HappyTreesAPI.swift; sourceTree = "<group>"; };
+		95DEAC0A1F0FD59300AE8854 /* PaintingDatePickerViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaintingDatePickerViewController.swift; sourceTree = "<group>"; };
 		D328217C1EFDC6B000D9CCDB /* FavoritesViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoritesViewController.swift; sourceTree = "<group>"; };
 		D328217E1EFDC96C00D9CCDB /* Favorite.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Favorite.swift; sourceTree = "<group>"; };
 		D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FavoriteStore.swift; sourceTree = "<group>"; };
@@ -110,6 +112,52 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		95DEAC0C1F0FF56700AE8854 /* Paintings */ = {
+			isa = PBXGroup;
+			children = (
+				95DEAC0A1F0FD59300AE8854 /* PaintingDatePickerViewController.swift */,
+				D361ABCE1EFEA716004DEC54 /* PaintingDetailViewController.swift */,
+				D361ABCA1EFEA3A3004DEC54 /* Painting.swift */,
+				D361ABCC1EFEA4A4004DEC54 /* PaintingStore.swift */,
+				D361ABC81EFEA282004DEC54 /* PaintingsViewController.swift */,
+				D361ABD01EFEB5A2004DEC54 /* PaintingImageDataSource.swift */,
+				D361ABD41EFEB7D1004DEC54 /* PaintingCollectionViewCell.swift */,
+				D361ABD21EFEB629004DEC54 /* PaintingImage.swift */,
+			);
+			name = Paintings;
+			sourceTree = "<group>";
+		};
+		95DEAC0D1F0FF58B00AE8854 /* Favorites */ = {
+			isa = PBXGroup;
+			children = (
+				D33A4BA71F00234E00E3696E /* FavoriteImageViewController.swift */,
+				D32821821EFDDFD600D9CCDB /* FavoriteWebViewController.swift */,
+				D328217E1EFDC96C00D9CCDB /* Favorite.swift */,
+				D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */,
+				D328217C1EFDC6B000D9CCDB /* FavoritesViewController.swift */,
+			);
+			name = Favorites;
+			sourceTree = "<group>";
+		};
+		95DEAC0E1F0FF5A000AE8854 /* Supplies */ = {
+			isa = PBXGroup;
+			children = (
+				D34264CA1EFB41B800DF0894 /* SupplyDetailViewController.swift */,
+				D34264C41EFB3C6600DF0894 /* SuppliesViewController.swift */,
+				D34264C61EFB3C8F00DF0894 /* Supply.swift */,
+				D34264C81EFB3E8900DF0894 /* SupplyStore.swift */,
+			);
+			name = Supplies;
+			sourceTree = "<group>";
+		};
+		95DEAC0F1F0FF5B800AE8854 /* TwoInchBrush */ = {
+			isa = PBXGroup;
+			children = (
+				D34264C21EFB1F5E00DF0894 /* TIBHomeWebViewController.swift */,
+			);
+			name = TwoInchBrush;
+			sourceTree = "<group>";
+		};
 		D34264881EFB1E9D00DF0894 = {
 			isa = PBXGroup;
 			children = (
@@ -133,27 +181,14 @@
 		D34264931EFB1E9D00DF0894 /* HappyTrees */ = {
 			isa = PBXGroup;
 			children = (
+				95DEAC0F1F0FF5B800AE8854 /* TwoInchBrush */,
+				95DEAC0E1F0FF5A000AE8854 /* Supplies */,
+				95DEAC0D1F0FF58B00AE8854 /* Favorites */,
+				95DEAC0C1F0FF56700AE8854 /* Paintings */,
 				D34264941EFB1E9D00DF0894 /* AppDelegate.swift */,
 				95DEAC081F0E96E600AE8854 /* HappyTreesAPI.swift */,
 				D34264981EFB1E9D00DF0894 /* Main.storyboard */,
-				D33A4BA71F00234E00E3696E /* FavoriteImageViewController.swift */,
-				D361ABCE1EFEA716004DEC54 /* PaintingDetailViewController.swift */,
-				D361ABCA1EFEA3A3004DEC54 /* Painting.swift */,
-				D361ABCC1EFEA4A4004DEC54 /* PaintingStore.swift */,
-				D361ABC81EFEA282004DEC54 /* PaintingsViewController.swift */,
-				D361ABD01EFEB5A2004DEC54 /* PaintingImageDataSource.swift */,
-				D361ABD41EFEB7D1004DEC54 /* PaintingCollectionViewCell.swift */,
-				D361ABD21EFEB629004DEC54 /* PaintingImage.swift */,
-				D32821821EFDDFD600D9CCDB /* FavoriteWebViewController.swift */,
-				D328217E1EFDC96C00D9CCDB /* Favorite.swift */,
-				D32821801EFDCA2E00D9CCDB /* FavoriteStore.swift */,
-				D328217C1EFDC6B000D9CCDB /* FavoritesViewController.swift */,
 				D3FBD9831EFB810800CD200E /* ImageStore.swift */,
-				D34264CA1EFB41B800DF0894 /* SupplyDetailViewController.swift */,
-				D34264C41EFB3C6600DF0894 /* SuppliesViewController.swift */,
-				D34264C61EFB3C8F00DF0894 /* Supply.swift */,
-				D34264C81EFB3E8900DF0894 /* SupplyStore.swift */,
-				D34264C21EFB1F5E00DF0894 /* TIBHomeWebViewController.swift */,
 				D342649B1EFB1E9D00DF0894 /* Assets.xcassets */,
 				D342649D1EFB1E9D00DF0894 /* LaunchScreen.storyboard */,
 				D34264A01EFB1E9D00DF0894 /* Info.plist */,
@@ -336,6 +371,7 @@
 				D328217F1EFDC96C00D9CCDB /* Favorite.swift in Sources */,
 				D3FBD9841EFB810800CD200E /* ImageStore.swift in Sources */,
 				D34264C91EFB3E8900DF0894 /* SupplyStore.swift in Sources */,
+				95DEAC0B1F0FD59300AE8854 /* PaintingDatePickerViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

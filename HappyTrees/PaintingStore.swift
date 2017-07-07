@@ -79,5 +79,9 @@ class PaintingStore {
     return allKeys
   }
   
+  func getPaintingsSortedByDate() -> [Painting] {
+    return allPaintings.sorted { $0.dateCreated < $1.dateCreated }
+  }
+  
 }
 
