@@ -46,6 +46,15 @@ class SupplyStore {
     }
   }
   
+  func findSupply(byName name: String) -> Supply? {
+    var supply = allSupplies.filter { $0.name == name }
+    if supply.isEmpty {
+      return nil
+    } else {
+      return supply[0]
+    }
+  }
+  
   func removeSupply(_ supply: Supply) {
     if let index = allSupplies.index(of: supply) {
       allSupplies.remove(at: index)
@@ -94,6 +103,24 @@ class SupplyStore {
   func getSortedMediums() -> [Supply] {
     let mediums = allSupplies.filter { $0.type! == "Medium" }
     return mediums.sorted { $0.name! < $1.name! }
+  }
+  
+  func getSuppliesNeeded(supplyNames: [String]) -> [Supply] {
+    var suppliesNeeded = [Supply]()
+    
+    for name in supplyNames {
+      let supply = findSupply(byName: name)
+      if let supply = supply {
+        if supply.amount! < 0.3 {
+          suppliesNeeded.append(supply)
+        }
+      } else {
+        let newSupply = createSupply(name: name, type: "Oil Paint", amount: 0.0)
+        suppliesNeeded.append(newSupply)
+      }
+    }
+    
+    return suppliesNeeded
   }
   
 }

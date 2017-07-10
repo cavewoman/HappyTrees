@@ -18,15 +18,9 @@ class PaintingsCollectionViewController: UIViewController, UICollectionViewDeleg
   override func viewWillAppear(_ animated: Bool) {
     super.viewWillAppear(animated)
     paintingDataSource.paintings = paintingStore.getPaintingsSortedByDate()
-    collectionView.reloadData()
-  }
-  
-  override func viewDidLoad() {
-    super.viewDidLoad()
-    
-    paintingDataSource.paintings = paintingStore.getPaintingsSortedByDate()
     collectionView.dataSource = paintingDataSource
     collectionView.delegate = self
+    collectionView.reloadData()
   }
   
   override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
@@ -62,8 +56,11 @@ class PaintingsCollectionViewController: UIViewController, UICollectionViewDeleg
     
     let key = painting.paintingKey
     let imageToDisplay = imageStore.image(forKey: key!)
+    
+    let thumb = UIImage(data: UIImageJPEGRepresentation(imageToDisplay!, 0.8)!)
+    
     let paintingCell = cell as! PaintingCollectionViewCell
-    paintingCell.update(with: imageToDisplay)
+    paintingCell.update(with: thumb)
     
   }
   

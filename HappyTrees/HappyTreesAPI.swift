@@ -137,9 +137,10 @@ class HappyTreesAPI {
         print("FOUND FAVORITE \(foundFavorite)")
         foundFavorite.title = favoriteData["title"] as? String
         foundFavorite.url = URL(string: (favoriteData["url"] as? String)!)
+        foundFavorite.requiredSupplyNames = favoriteData["supply_names"] as? [String]
       } else {
         print("Creating favorite")
-        favoriteStore.createFavorite(title: favoriteData["title"] as! String, url: URL(string: favoriteData["url"] as! String)!, favoriteKey: favoriteData["favorite_key"] as! String, requiredSupplyNames: [])
+        favoriteStore.createFavorite(title: favoriteData["title"] as! String, url: URL(string: favoriteData["url"] as! String)!, favoriteKey: favoriteData["favorite_key"] as! String, requiredSupplyNames: favoriteData["supply_names"] as! [String])
       }
     }
   }
@@ -188,7 +189,7 @@ class HappyTreesAPI {
   }
   
   func formatFavoriteForPost(favorite: Favorite) -> [String:Any] {
-    return ["title": favorite.title!, "url": "\(favorite.url!)", "favorite_key": favorite.favoriteKey!]
+    return ["title": favorite.title!, "url": "\(favorite.url!)", "favorite_key": favorite.favoriteKey!, "supply_names": favorite.requiredSupplyNames ?? []]
   }
   
   func sync_paintings_down(paintingStore: PaintingStore) {

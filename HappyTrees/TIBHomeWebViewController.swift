@@ -24,7 +24,7 @@ class TIBWebViewController: UIViewController, WKNavigationDelegate {
     webView.evaluateJavaScript(js) { (result, error) in
       if error == nil {
         if let result = result{
-          let supply_names = (result as AnyObject).components(separatedBy: "?").filter { $0 != "" }
+          let supply_names = (result as AnyObject).components(separatedBy: "?").filter { $0 != "" }.map { $0.replacingOccurrences(of: "\n", with: "") }
           self.favoriteStore.createFavorite(title: self.webView.title!, url: self.webView.url!, requiredSupplyNames: supply_names)
           print(supply_names)
         }

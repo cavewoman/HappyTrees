@@ -9,18 +9,18 @@
 import Foundation
 
 class PaintingImage {
-    let title: String
-    let imageId: String
-    
-    init(title: String, imageId: String) {
-        self.title = title
-        self.imageId = imageId
-    }
-    
+  let title: String
+  let imageId: String
+  
+  init(title: String, imageId: String, originalImageOrientation: String) {
+    self.title = title
+    self.imageId = imageId
+  }
+  
 }
 
 extension PaintingImage: Equatable {
-    static func == (lhs: PaintingImage, rhs: PaintingImage) -> Bool {
-        return lhs.imageId == rhs.imageId
-    }
+  static func == (lhs: PaintingImage, rhs: PaintingImage) -> Bool {
+    return lhs.imageId == rhs.imageId
+  }
 }

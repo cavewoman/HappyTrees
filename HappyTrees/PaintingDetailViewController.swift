@@ -98,9 +98,16 @@ class PaintingDetailViewController: UIViewController, UITextFieldDelegate, UINav
   }
   
   func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String: Any]) {
-    let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-    imageStore.setImage(image, forKey: painting.paintingKey!)
-    imageView.image = image
+    if let editedImage = info[UIImagePickerControllerEditedImage] as? UIImage {
+      imageStore.setImage(editedImage, forKey: painting.paintingKey!)
+      imageView.image = editedImage
+    } else if let originalImage = info[UIImagePickerControllerOriginalImage] as? UIImage {
+      imageStore.setImage(originalImage, forKey: painting.paintingKey!)
+      imageView.image = originalImage
+    } else {
+      imageView.image = nil
+    }
+    
     
     dismiss(animated: true, completion: nil)
   }

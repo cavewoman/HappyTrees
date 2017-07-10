@@ -31,7 +31,7 @@ class PaintingStore {
   }
   
   @discardableResult func createPainting(title: String, dateCreated: Date, paintingKey: String) -> Painting {
-    let newPainting = Painting(title: title, dateCreated: dateCreated, paintingKey: paintingKey)
+    let newPainting = Painting(title: title, dateCreated: dateCreated, paintingKey: paintingKey, originialOrientation: UIImageOrientation.up)
     
     allPaintings.append(newPainting)
     return newPainting

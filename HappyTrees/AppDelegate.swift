@@ -42,6 +42,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     let favoritesNavController = tabController.viewControllers?[2] as! UINavigationController
     let favoritesViewController = favoritesNavController.topViewController as! FavoritesViewController
     favoritesViewController.favoriteStore = favoriteStore
+    favoritesViewController.supplyStore = supplyStore
     
     let paintingNavController = tabController.viewControllers?[3] as! UINavigationController
     let paintingsViewController = paintingNavController.topViewController as! PaintingsCollectionViewController
